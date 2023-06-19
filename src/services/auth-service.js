@@ -4,15 +4,18 @@ require('dotenv/config');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET_KEY;
 
+/** Gera tokens de acesso para os Customers */
 exports.generateToken = async (data) => {
     return jwt.sign(data, SECRET, { expiresIn: '300s' });
 }
 
+/** Decodifica os tokens de acesso */
 exports.decodeToken = async (token) => {
     var data = await jwt.verify(token, SECRET);
     return data;
 }
 
+/** Efectua a checagem de tokens para autenticação de Customers */
 exports.authorize = function (req, res, next) {
     const token = req.body.token || req.query.token || req.headers['authorization'];
     
@@ -33,6 +36,7 @@ exports.authorize = function (req, res, next) {
     }
 }
 
+/** Intercepta os pedidos direcionados para rotas restritas a administradores  */
 exports.isAdmin = function (req, res, next) {
     const token = req.body.token || req.query.token || req.headers['authorization'];
 

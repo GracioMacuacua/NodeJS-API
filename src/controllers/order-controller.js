@@ -5,6 +5,7 @@ const guid = require('guid');
 const authService = require('../services/auth-service');
 const repository = require('../repositories/order-repository');
 
+/** Busca todos os Pedidos da base de dados */
 exports.get = async (req, res, next) => {
     try {
         const data = await repository.get();
@@ -17,6 +18,7 @@ exports.get = async (req, res, next) => {
     }
 };
 
+/** Registra pedidos na base de dados */
 exports.post = async (req, res, next) => {
     try {
         const token = req.body.token || req.query.token || req.headers['authorization'];

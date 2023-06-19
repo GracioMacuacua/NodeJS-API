@@ -3,6 +3,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../bin/db');
 
+/** Define a entidade Product */
 const Product = sequelize.define('Product', {
     title: {
         type: Sequelize.STRING,

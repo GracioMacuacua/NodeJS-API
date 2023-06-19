@@ -4,6 +4,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../../bin/db');
 const Customer = require('./customer');
 
+/** Define a entidade Order */
 const Order = sequelize.define('Order', {
     number: {
         type: Sequelize.STRING,

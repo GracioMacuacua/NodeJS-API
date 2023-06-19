@@ -6,6 +6,7 @@ const md5 = require('md5');
 require('dotenv/config');
 const SECRET = process.env.SECRET_KEY;
 
+/** Busca um cliente com base no seu ID */
 exports.getById = async (req, res, next) => {
     try {
         const data = await repository.getById(req.params.id);
@@ -18,6 +19,7 @@ exports.getById = async (req, res, next) => {
     }
 }
 
+/** Cria novos clientes */
 exports.post = async (req, res, next) => {
     try {
         await repository.create({

@@ -5,6 +5,7 @@ const sequelize = require('../../bin/db');
 const Product = require('./product');
 const Order = require('./order');
 
+/** Define a entidade Item */
 const Item = sequelize.define('Item', {
     quantity: {
         type: Sequelize.INTEGER,

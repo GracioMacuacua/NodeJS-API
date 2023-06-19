@@ -7,6 +7,7 @@ const app = express();
 const database = require('../bin/db');
 const authService = require('./services/auth-service');
 
+//Carregamento dos modelos
 const Product = require('./models/product');
 const Customer = require('./models/customer');
 const Order = require('./models/order');

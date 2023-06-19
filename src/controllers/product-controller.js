@@ -2,6 +2,7 @@
 
 const repository = require('../repositories/product-repository');
 
+/** Busca todos os Produtos da base de dados */
 exports.get = async (req, res, next) => {
     try {
         const data = await repository.get();
@@ -14,6 +15,7 @@ exports.get = async (req, res, next) => {
     }
 };
 
+/** Busca um Product específico com base no seu slug */
 exports.getBySlug = async (req, res, next) => {
     try {
         const data = await repository.getBySlug(req.params.slug);
@@ -26,6 +28,7 @@ exports.getBySlug = async (req, res, next) => {
     }
 };
 
+/** Busca um Product específico com base no seu ID */
 exports.getById = async (req, res, next) => {
     try {
         const data = await repository.getById(req.params.id);
@@ -38,6 +41,7 @@ exports.getById = async (req, res, next) => {
     }
 };
 
+/** Registra Products na base de dados */
 exports.post = async (req, res, next) => {
     try {
         await repository.create(req.body);
@@ -52,6 +56,7 @@ exports.post = async (req, res, next) => {
     }
 };
 
+/** Actualiza os dados de um Product específico com base no seu ID */
 exports.put = async (req, res, next) => {
     try {
         await repository.update(req.params.id, req.body);
@@ -66,6 +71,7 @@ exports.put = async (req, res, next) => {
     }
 };
 
+/** Apaga um Product com base no seu ID */
 exports.delete = async (req, res, next) => {
     try {
         await repository.delete(req.params.id);

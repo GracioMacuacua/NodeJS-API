@@ -7,6 +7,7 @@ const md5 = require('md5');
 require('dotenv/config');
 const SECRET = process.env.SECRET_KEY;
 
+/** Efectua a autenticação de utilizadores */
 exports.authenticate = async (req, res, next) => {
     try {
         const customer = await repository.authenticate({
@@ -38,6 +39,7 @@ exports.authenticate = async (req, res, next) => {
     }
 }
 
+/** Actualiza o token de acesso dos users */
 exports.refreshToken = async (req, res, next) => {
     try {
         const token = req.body.token || req.query.token || req.headers['authorization'];
