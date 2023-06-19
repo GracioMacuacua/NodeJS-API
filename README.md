@@ -20,7 +20,7 @@ Having all the tools installed, follow the steps below:
 1. Clone this project from my GitHub profile [here](https://github.com/GracioMacuacua/NodeJS-REST-API.git);
 2. In your environment's console, navigate to the project's folder and run the `npm install` command to install the project's dependencies;
 
-<img src="img1.gif" alt="Install dependencies">
+<img src="install.gif" alt="Install dependencies">
 
 3. Edit the file [.env.example](./.env.example) putting in `SECRET_KEY` a strong key of your choice to validate the application users;
 
@@ -39,7 +39,7 @@ CONNECTION_STRING = mysql://user:password@localhost:3306/database_name
 5. Change the file name [.env.example](./.env.example) to `.env`;
 6. In your environment's console, execute the `npm start` command to start the application.
 
-<img src="img2.gif" alt="Application execution">
+<img src="start.gif" alt="Application execution">
 
 ---
 
